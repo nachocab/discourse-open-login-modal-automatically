@@ -12,16 +12,16 @@ export default {
         return;
       } // must not be logged in
 
-      let shownSignupOnce = false;
+      let shownLoginOnce = false;
 
       api.onPageChange(() => {
         let pageView = 1;
         pageView++;
-        const showSignup = pageView && !shownSignupOnce;
-        if (showSignup) {
-          shownSignupOnce = true;
-          showModal('createAccount', {
-            modalClass: 'create-account',
+        const showLogin = pageView && !shownLoginOnce;
+        if (showLogin) {
+          shownLoginOnce = true;
+          showModal('login', {
+            modalClass: 'login',
           });
         }
       });
